@@ -4,7 +4,7 @@ const Card = () => {
   return (
     <div>
            {/* card */}
-      <div className='rounded-lg flex-row justify-center content-center w-[300px] h-[500px] m-auto bg-white'>
+      <div className='rounded-lg flex-row justify-center content-center w-[220px] md:w-[300px] h-[420px] md:h-[500px] m-auto bg-white my-4'>
           <div>
             <img className='w-[300px] rounded-t-lg' src="https://dev.mecarreira.com/static/media/3-min.de0678c6166164e2ed6f.png" alt="" />
           </div>
