@@ -3,7 +3,8 @@ import {IoIosNotificationsOutline} from 'react-icons/io'
 import {IoIosMenu} from 'react-icons/io';
 const Navbar = () => {
   return (
-    <div className='bg-[#222435] flex justify-between items-center px-8 py-2'>
+    <div className='bg-[#222435]'>
+        <div className='flex justify-between items-center px-8 py-2'>
         <div className='text-white text-3xl font-'>
             <IoIosNotificationsOutline/>
         </div>
@@ -13,6 +14,8 @@ const Navbar = () => {
         <div className='text-white text-3xl'>
         <IoIosMenu/>
         </div>
+    </div>
+      <div className='bg-[#c2c2c3] h-[2px]'></div>
     </div>
   )
 }
