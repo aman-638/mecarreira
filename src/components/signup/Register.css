@@ -1,14 +1,9 @@
 .bg-image{
     background-image: url("meca.png");
-    position: fixed;
-    z-index: -1;
-    height: 1000px;
     width: 100%;
-    /* filter: blur(4px); */
+    height: 100%;
+    position: absolute;
 }
 .sign{
     margin-top: 100px;
-}
-label{
-    text-align: left;
 }

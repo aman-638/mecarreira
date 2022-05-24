@@ -2,7 +2,7 @@ import React from 'react'
 
 const Card = () => {
   return (
-    <div>
+    <div className=''>
            {/* card */}
       <div className='rounded-lg flex-row justify-center content-center w-[220px] md:w-[300px] h-[420px] md:h-[500px] m-auto bg-white my-4'>
           <div>
