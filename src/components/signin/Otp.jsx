@@ -23,7 +23,7 @@ export const Otp = () => {
     e.preventDefault();
     axios.post(`https://restapi.mecarreira.com/accounts/login/`,formData).then((res) => {
       if(res.data.success){
-        alert(res.data.message);
+        alert('OTP verify successfully');
         navigate('/');
       }else{
         alert(res.data.message);
