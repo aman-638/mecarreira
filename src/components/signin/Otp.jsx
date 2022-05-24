@@ -13,12 +13,12 @@ export const Otp = () => {
     password:meca.password,
     otp:OTP
   });
-  const changeHandler = (e) => {
-    e.preventDefault();
-    const {id,value} = e.target;
-    setFormData({...formData,[id]:value});
-    //console.log(formData);
-  }
+  // const changeHandler = (e) => {
+  //   e.preventDefault();
+  //   const {id,value} = e.target;
+  //   setFormData({...formData,[id]:value});
+  //   //console.log(formData);
+  // }
   const formSubmit = (e) => {
     e.preventDefault();
     axios.post(`https://restapi.mecarreira.com/accounts/login/`,formData).then((res) => {
