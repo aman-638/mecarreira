@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Register.css'
 import {HiOutlineArrowSmRight} from 'react-icons/hi'
 
 export const Register = () => {
+  const [formData,setFormData] = useState([]);
+  
   return (
     <div className='bg-image'>
         <div className='flex w-[90%] m-auto md:ml-[40%] sign'>
@@ -26,7 +28,7 @@ export const Register = () => {
                 <input className=' w-[80%] flex m-auto p-3 rounded font-semibold bg-[#2c2f45] text-[#a0aaaf]  outline-none' type="password" placeholder='Enter Password' /><br></br>
                 <label className=' w-[80%] flex m-auto text-[#a0aaaf] font-semibold'>Confirm Password</label>
                 <input className=' w-[80%] flex m-auto p-3 rounded font-semibold bg-[#2c2f45] text-[#a0aaaf]  outline-none' type="password" placeholder='Enter Password' /><br></br>
-                 <input className='w-[80%] flex justify-center m-auto rounded-xl text-[#68c20b] border-[#68c20b] border-2 py-3 px-8 w-[200px] font-semibold bg-transparent hover:text-[#29990e] hover:border-[#29990e] my-6' type="submit" value="Sign Up" />
+                 <input className='w-[80%] flex justify-center m-auto rounded-xl text-[#68c20b] border-[#68c20b] border-2 py-3 px-8 font-semibold bg-transparent hover:text-[#29990e] hover:border-[#29990e] my-6' type="submit" value="Sign Up" />
                 </form>
 
                 <p className='text-white font-semibold text-center'>Don't want an account?</p>

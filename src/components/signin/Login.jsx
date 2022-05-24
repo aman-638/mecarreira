@@ -25,7 +25,7 @@ const Login = () => {
                 <label className=' w-[80%] flex m-auto text-[#a0aaaf] font-semibold'>Choose Password</label>
                 <input className=' w-[80%] flex m-auto p-3 rounded font-semibold bg-[#2c2f45] text-[#a0aaaf]  outline-none' type="password" placeholder='Enter Password' /><br></br>
                 
-                 <input className='w-[80%] flex justify-center m-auto rounded-xl text-[#68c20b] border-[#68c20b] border-2 py-3 px-8 w-[200px] font-semibold bg-transparent hover:text-[#29990e] hover:border-[#29990e] my-6' type="submit" value="Sign In" />
+                 <input className='w-[80%] flex justify-center m-auto rounded-xl text-[#68c20b] border-[#68c20b] border-2 py-3 px-8 font-semibold bg-transparent hover:text-[#29990e] hover:border-[#29990e] my-6' type="submit" value="Sign In" />
                 </form>
 
                 <p className='text-white font-semibold text-center'>Want to connect your wallet instead?</p>

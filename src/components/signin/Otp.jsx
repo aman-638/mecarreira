@@ -25,7 +25,7 @@ export const Otp = () => {
 
                 <form action="">
                  <input type="number" className='flex w-[80%] m-auto mt-8 p-3 outline-none' />
-                 <input className='w-[80%] flex justify-center m-auto rounded-xl text-[black] bg-[#81df0d] py-3 px-8 w-[200px] font-semibold  hover:bg-[#68c20b] my-6 mt-10' type="submit" value="Done" />
+                 <input className='w-[80%] flex justify-center m-auto rounded-xl text-[black] bg-[#81df0d] py-3 px-8 font-semibold  hover:bg-[#68c20b] my-6 mt-10' type="submit" value="Done" />
                 </form>
 
                 <div className='text-center p-4'>
