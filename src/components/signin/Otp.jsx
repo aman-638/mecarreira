@@ -2,14 +2,16 @@ import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import OTPInput from "otp-input-react";
 
 export const Otp = () => {
    const navigate = useNavigate();
    let meca = JSON.parse(localStorage.getItem('meca'));
+   const [OTP,setOTP] = useState("");
   const [formData,setFormData] = useState({
     email:meca.email,
     password:meca.password,
-    otp:""
+    otp:OTP
   });
   const changeHandler = (e) => {
     e.preventDefault();
@@ -53,7 +55,8 @@ export const Otp = () => {
                 <p className='text-white font-semibold text-center text-lg '>Registered E-mail ID.</p>
 
                 <form onSubmit={formSubmit}>
-                 <input type="number" id='otp' onChange={changeHandler} className='flex w-[80%] m-auto mt-8 p-3 outline-none' />
+                <OTPInput className="w-[80%] flex m-auto mt-4 " value={OTP} onChange={setOTP} autoFocus OTPLength={6} otpType="number" disabled={false}  />
+                 {/* <input type="number" id='otp' onChange={changeHandler} className='flex w-[80%] m-auto mt-8 p-3 outline-none' /> */}
                  <input className=' cursor-pointer w-[80%] flex justify-center m-auto rounded-xl text-[black] bg-[#81df0d] py-3 px-8 font-semibold  hover:bg-[#68c20b] my-6 mt-10' type="submit" value="Done" />
                 </form>
 
