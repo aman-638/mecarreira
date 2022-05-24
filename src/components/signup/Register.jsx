@@ -2,10 +2,36 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Register.css'
 import {HiOutlineArrowSmRight} from 'react-icons/hi'
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 export const Register = () => {
-  const [formData,setFormData] = useState([]);
-  
+  const navigate = useNavigate();
+  const [formData,setFormData] = useState({
+    email:"",
+    password:"",
+    confirm_password:""
+  });
+  const changeHandler = (e) => {
+    e.preventDefault();
+    const {id,value} = e.target;
+    setFormData({...formData,[id]:value});
+    //console.log(formData);
+  }
+  const formSubmit = (e) => {
+    e.preventDefault();
+    axios.post(`https://restapi.mecarreira.com/accounts/signup/`,formData).then((res) => {
+      if(res.data.success){
+        alert(res.data.message);
+        navigate('/login');
+      }else{
+        alert(res.data.message);
+      }
+    }).catch((err) => {
+      alert('something went wrong');
+      console.log(err);
+    })
+  }
   return (
     <div className='bg-image'>
         <div className='flex w-[90%] m-auto md:ml-[40%] sign'>
@@ -21,14 +47,14 @@ export const Register = () => {
                </div></Link>
              </div>
              <div className='bg-[#212435] rounded-b-xl h-[400px] md:h-[500px] overflow-y-scroll'>
-                <form action="">
+                <form onSubmit={formSubmit}>
                 <label className=' w-[80%] pt-4 flex m-auto text-[#a0aaaf] font-semibold'>Email</label>
-                <input className=' w-[80%] flex m-auto p-3 rounded font-semibold bg-[#2c2f45] text-[#a0aaaf]  outline-none' type="email" placeholder='Enter Email' /><br></br>
+                <input id='email' onChange={changeHandler} className=' w-[80%] flex m-auto p-3 rounded font-semibold bg-[#2c2f45] text-[#a0aaaf]  outline-none' type="email" placeholder='Enter Email' /><br></br>
                 <label className=' w-[80%] flex m-auto text-[#a0aaaf] font-semibold'>Choose Password</label>
-                <input className=' w-[80%] flex m-auto p-3 rounded font-semibold bg-[#2c2f45] text-[#a0aaaf]  outline-none' type="password" placeholder='Enter Password' /><br></br>
+                <input id='password' onChange={changeHandler} className=' w-[80%] flex m-auto p-3 rounded font-semibold bg-[#2c2f45] text-[#a0aaaf]  outline-none' type="password" placeholder='Enter Password' /><br></br>
                 <label className=' w-[80%] flex m-auto text-[#a0aaaf] font-semibold'>Confirm Password</label>
-                <input className=' w-[80%] flex m-auto p-3 rounded font-semibold bg-[#2c2f45] text-[#a0aaaf]  outline-none' type="password" placeholder='Enter Password' /><br></br>
-                 <input className='w-[80%] flex justify-center m-auto rounded-xl text-[#68c20b] border-[#68c20b] border-2 py-3 px-8 font-semibold bg-transparent hover:text-[#29990e] hover:border-[#29990e] my-6' type="submit" value="Sign Up" />
+                <input id='confirm_password' onChange={changeHandler} className=' w-[80%] flex m-auto p-3 rounded font-semibold bg-[#2c2f45] text-[#a0aaaf]  outline-none' type="password" placeholder='Enter Password' /><br></br>
+                 <input className=' cursor-pointer w-[80%] flex justify-center m-auto rounded-xl text-[#68c20b] border-[#68c20b] border-2 py-3 px-8 font-semibold bg-transparent hover:text-[#29990e] hover:border-[#29990e] my-6' type="submit" value="Sign Up" />
                 </form>
 
                 <p className='text-white font-semibold text-center'>Don't want an account?</p>

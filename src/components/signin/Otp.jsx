@@ -1,7 +1,36 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 export const Otp = () => {
+   const navigate = useNavigate();
+   let meca = JSON.parse(localStorage.getItem('meca'));
+  const [formData,setFormData] = useState({
+    email:meca.email,
+    password:meca.password,
+    otp:""
+  });
+  const changeHandler = (e) => {
+    e.preventDefault();
+    const {id,value} = e.target;
+    setFormData({...formData,[id]:value});
+    //console.log(formData);
+  }
+  const formSubmit = (e) => {
+    e.preventDefault();
+    axios.post(`https://restapi.mecarreira.com/accounts/login/`,formData).then((res) => {
+      if(res.data.success){
+        alert(res.data.message);
+        navigate('/');
+      }else{
+        alert(res.data.message);
+      }
+    }).catch((err) => {
+      alert('something went wrong');
+      console.log(err);
+    })
+  }
   return (
     <div className='bg-image'>
         <div className='flex w-[90%] m-auto md:ml-[40%] sign '>
@@ -23,9 +52,9 @@ export const Otp = () => {
                 <p className='text-white font-semibold text-center text-lg '>received on your</p>
                 <p className='text-white font-semibold text-center text-lg '>Registered E-mail ID.</p>
 
-                <form action="">
-                 <input type="number" className='flex w-[80%] m-auto mt-8 p-3 outline-none' />
-                 <input className='w-[80%] flex justify-center m-auto rounded-xl text-[black] bg-[#81df0d] py-3 px-8 font-semibold  hover:bg-[#68c20b] my-6 mt-10' type="submit" value="Done" />
+                <form onSubmit={formSubmit}>
+                 <input type="number" id='otp' onChange={changeHandler} className='flex w-[80%] m-auto mt-8 p-3 outline-none' />
+                 <input className=' cursor-pointer w-[80%] flex justify-center m-auto rounded-xl text-[black] bg-[#81df0d] py-3 px-8 font-semibold  hover:bg-[#68c20b] my-6 mt-10' type="submit" value="Done" />
                 </form>
 
                 <div className='text-center p-4'>
