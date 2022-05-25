@@ -19,7 +19,7 @@ const Confirm = () => {
  // ${formData.id}/${formData.token}
   const formSubmit = (e) => {
     e.preventDefault();
-    axios.get(`https://dev.mecarreira.com/accounts/verify/email/${formData.id}/${formData.token}`).then((res) => {
+    axios.post(`https://dev.mecarreira.com/accounts/verify/email/`,formData).then((res) => {
       if(res.data.success){
         alert(res.data.message);
         navigate('/login');
