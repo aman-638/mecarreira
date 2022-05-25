@@ -23,7 +23,7 @@ export const Register = () => {
     axios.post(`https://restapi.mecarreira.com/accounts/signup/`,formData).then((res) => {
       if(res.data.success){
         alert(res.data.message);
-        navigate('/login');
+        navigate('/confirm');
       }else{
         alert(res.data.message);
       }
