@@ -1,5 +1,6 @@
 import React from 'react'
 import {BiLeftArrowAlt} from 'react-icons/bi'
+import {MdKeyboardArrowRight} from 'react-icons/md'
 
 const Menu = () => {
   return (
@@ -16,32 +17,34 @@ const Menu = () => {
         </div>
 
         <div>
-            <div>
+            <div className='flex justify-between items'>
                 <p>Language</p>
-                <p>English<span>></span></p>
+                <p>English<span><MdKeyboardArrowRight/></span></p>
             </div>
             <div>
                 <p>Launch your own Player Coin</p>
-                <p>></p> 
+                <p><MdKeyboardArrowRight/></p> 
             </div>
             <div>
                 <p>Ongoing Subscriptions</p>
-                <p>></p>
+                <p><MdKeyboardArrowRight/></p>
             </div>
-            <div>
+            <div className='flex justify-between items-center'>
                 <p>Latest created NFT’s</p>
-                <p>></p>
+                <p><MdKeyboardArrowRight/></p>
             </div>
         </div>
        
         <div className='bg-[#43444b] w-[40%] h-[1px] mt-4 mb-4 m-[auto]'></div>
 
-        <p>About Us</p>
-        <p>Team</p>
-        <p>Terms & Conditions</p>
-        <p>Privacy</p>
-        <p>Careers</p>
-        <p>Disclaimer</p>
+       <div className='text-[#a7acb5] font-semibold w-[40%] m-auto'>
+        <p className='text-left py-1'>About Us</p>
+        <p className='text-left py-1'>Team</p>
+        <p className='text-left py-1'>Terms & Conditions</p>
+        <p className='text-left py-1'>Privacy</p>
+        <p className='text-left py-1'>Careers</p>
+        <p className='text-left py-1'>Disclaimer</p>
+       </div>
     
         <div className='bg-[#43444b] w-[40%] h-[1px] mt-4 mb-4 m-[auto]'></div>
         <h3 className='font-bold text-xl p-4 text-white'>Join the community</h3>
