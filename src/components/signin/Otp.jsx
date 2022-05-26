@@ -8,6 +8,7 @@ export const Otp = () => {
    const navigate = useNavigate();
    let meca = JSON.parse(localStorage.getItem('meca'));
    const [OTP,setOTP] = useState("");
+   const [mecau,setMecau] = useState({});
   const [formData,setFormData] = useState({
     email:meca.email,
     password:meca.password,
@@ -24,6 +25,8 @@ export const Otp = () => {
     axios.post(`https://restapi.mecarreira.com/accounts/login/`,formData).then((res) => {
       if(res.data.success){
         alert('OTP verify successfully');
+        setMecau(res.data.data)
+        localStorage.setItem("mecauser",JSON.stringify(mecau));
         navigate('/');
       }else{
         alert(res.data.message);
