@@ -26,6 +26,7 @@ export const Otp = () => {
       if(res.data.success){
         alert(res.data.message);
         localStorage.setItem("mecauser",JSON.stringify(res.data.data));
+        localStorage.setItem("mecalogin",JSON.stringify(true));
         navigate('/');
       }else{
         alert(res.data.message);
