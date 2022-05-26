@@ -1,12 +1,18 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import {BiLeftArrowAlt} from 'react-icons/bi'
 import {MdKeyboardArrowRight} from 'react-icons/md'
 import { Link } from 'react-router-dom'
 
 const Menu = () => {
   let mecauser = JSON.parse(localStorage.getItem('mecauser'));
-  let mecalogin = JSON.parse(localStorage.getItem('mecalogin'));
-  if(mecalogin){
+  const [user,setUser] = useState();
+  useEffect(() => {
+      setInterval(() => {
+        let mecalogin = JSON.parse(localStorage.getItem('mecalogin'));
+        setUser(mecalogin);
+    },1000)
+  },[user])
+  if(user){
   return (
     <div className='bg-[#171923] text-center'>
         <div className='flex justify-between items-center p-2 px-8'>
@@ -18,7 +24,7 @@ const Menu = () => {
         <div className='bg-[#171923 mt-8'>
         <button className='text-[#6bc909] text-lg font-bold bg-transparent border-2 p-3 px-8 m-2 border-[#29990e] hover:bg-[#81df0d] hover:text-[#12131c]'>CONNECT WALLET</button><br></br>
         <Link to='/menu'><button className='text-[#6bc909] text-lg font-bold bg-transparent border-2 p-3 px-8 m-2 border-[#29990e] hover:bg-[#81df0d] hover:text-[#12131c]' onClick={() => {
-          localStorage.setItem("mecalogin",JSON.stringify(false)); 
+          localStorage.setItem("mecalogin",JSON.stringify(false));
         }}>LOGOUT</button></Link>
         </div>
 

@@ -1,11 +1,17 @@
-import React from 'react'
+import React,{useState,useEffect}  from 'react'
 import {IoIosNotificationsOutline} from 'react-icons/io'
 import {IoIosMenu} from 'react-icons/io';
 import { Link } from 'react-router-dom';
 const Navbar = () => {
   let mecauser = JSON.parse(localStorage.getItem('mecauser'));
-  let mecalogin = JSON.parse(localStorage.getItem('mecalogin'));
-  if(mecalogin){
+  const [user,setUser] = useState();
+  useEffect(() => {
+      setInterval(() => {
+        let mecalogin = JSON.parse(localStorage.getItem('mecalogin'));
+        setUser(mecalogin);
+    },1000)
+  },[user])
+  if(user){
     return (
       <div className='bg-[#222435]'>
           <div className='flex justify-between items-center px-8 py-2'>
