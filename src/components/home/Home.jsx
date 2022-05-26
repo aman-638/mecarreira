@@ -35,7 +35,7 @@ const Home = () => {
         <Link to='/register' ><button className='text-[#68c20b] border-[#68c20b] border-2 py-3 px-8 w-[200px] font-bold bg-transparent hover:bg-[#81df0d] hover:text-[#12131c] my-6'>SIGN UP</button></Link>
         <h1 className='text-white font-bold text-3xl p-4' >New Launches</h1>
            {/* card */}
-        <div className='w-[65%] m-auto'>
+        <div className='w-[75%] m-auto'>
         <Carousel responsive={responsive} showDots={true} autoPlay={false}>
            <Card/>
            <Card/>
@@ -54,7 +54,7 @@ const Home = () => {
       <h3 className='font-bold text-lg p-8 text-white'>Latest created NFT’s</h3>
        
        {/* card */}
-       <div className='w-[65%] m-auto'>
+       <div className='w-[75%] m-auto'>
         <Carousel responsive={responsive} showDots={true} autoPlay={false}>
            <Card/>
            <Card/>

@@ -8,25 +8,24 @@ export const Otp = () => {
    const navigate = useNavigate();
    let meca = JSON.parse(localStorage.getItem('meca'));
    const [OTP,setOTP] = useState("");
-   const [mecau,setMecau] = useState({});
-  const [formData,setFormData] = useState({
+
+   let formData={
     email:meca.email,
     password:meca.password,
     otp:OTP
-  });
+  }
   // const changeHandler = (e) => {
   //   e.preventDefault();
-  //   const {id,value} = e.target;
-  //   setFormData({...formData,[id]:value});
-  //   //console.log(formData);
+  //   setOTP(e.target.value);
+  //   console.log(OTP);
   // }
+  //console.log(OTP)
   const formSubmit = (e) => {
     e.preventDefault();
     axios.post(`https://restapi.mecarreira.com/accounts/login/`,formData).then((res) => {
       if(res.data.success){
-        alert('OTP verify successfully');
-        setMecau(res.data.data)
-        localStorage.setItem("mecauser",JSON.stringify(mecau));
+        alert(res.data.message);
+        localStorage.setItem("mecauser",JSON.stringify(res.data.data));
         navigate('/');
       }else{
         alert(res.data.message);
