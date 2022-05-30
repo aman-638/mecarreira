@@ -11,7 +11,7 @@ const Menu = () => {
         let mecalogin = JSON.parse(localStorage.getItem('mecalogin'));
         setUser(mecalogin);
     },1000)
-  },[user])
+  },[])
   return (
     <div className='bg-[#171923] text-center'>
         <div className='flex justify-between items-center p-2 px-8'>
@@ -20,13 +20,12 @@ const Menu = () => {
             <Link to='/'><div className='text-white font-semibold text-xl'><span>X</span></div></Link>
         </div>
         <div>{user ?   <div className='bg-[#171923 mt-8'>
-             <div><a className='text-[#6bc909] text-lg font-bold bg-transparent border-2 p-3 px-8 m-2 border-[#29990e] hover:bg-[#81df0d] hover:text-[#12131c]' href='https://metamask.io/' rel='noreferrer' target='_blank'>CONNECT WALLET</a></div>  <br></br>
         <Link to='/menu'><button className='text-[#6bc909] text-lg font-bold bg-transparent border-2 p-3 px-8 m-2 border-[#29990e] hover:bg-[#81df0d] hover:text-[#12131c]' onClick={() => {
           localStorage.setItem("mecalogin",JSON.stringify(false));
           localStorage.setItem("mecauser",JSON.stringify(""));
         }}>LOGOUT</button></Link>
         </div>: <div className='bg-[#171923 mt-8'>
-        <button className='text-[#6bc909] text-lg font-bold bg-transparent border-2 p-3 px-8 m-2 border-[#29990e] hover:bg-[#81df0d] hover:text-[#12131c]'>CONNECT WALLET</button><br></br>
+        <div><a className='text-[#6bc909] text-lg font-bold bg-transparent border-2 p-3 px-8 m-2 border-[#29990e] hover:bg-[#81df0d] hover:text-[#12131c]' href='https://metamask.io/' rel='noreferrer' target='_blank'>CONNECT WALLET</a></div><br></br>
         <Link to='/register'><button className='text-[#6bc909] text-lg font-bold bg-transparent border-2 p-3 px-8 m-2 border-[#29990e] hover:bg-[#81df0d] hover:text-[#12131c]'>SIGN UP / SIGN IN</button></Link>
         </div>}</div>
 
