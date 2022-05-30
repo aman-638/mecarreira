@@ -5,6 +5,9 @@ import "react-multi-carousel/lib/styles.css";
 import {Link} from 'react-router-dom'
 import Navbar from '../navbar/Navbar';
 import Footer from '../footer/Footer';
+import './Home.css';
+import FlipCard from './FlipCard';
+
 
 const Home = () => {
     const responsive = {
@@ -49,6 +52,28 @@ const Home = () => {
        <p className='text-[#65ba11] underline font-bold cursor-pointer pb-8'>VIEW ALL</p>
      </div>
 
+  <div className='bg-[#171923]'>
+     <div className='text-center text-white'>
+     <p className='text-xl pt-4'>Introducing</p>
+    <p className='font-lightbold text-5xl pb-6'>Player Coins</p>
+    <p>Buy the player coin to unlock access to</p>
+    <p>exclusive content</p>
+     </div>
+    <div className='flipcard pt-4'>
+     <FlipCard/>
+     <FlipCard/>
+     <FlipCard/>
+     <FlipCard/>
+     <FlipCard/>
+     <FlipCard/>
+     </div>
+  </div>
+
+    <div>
+       <video className='w-[100%] h-[100%]' controls>
+         <source src="https://dev.mecarreira.com/videos/banner_video.webm" type="video/webm"></source>
+        </video>
+    </div>
 
     <div className='bg-[#12131c]'>
       <h3 className='font-bold text-lg p-8 text-white'>Latest created NFT’s</h3>

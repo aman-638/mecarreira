@@ -1,0 +1,52 @@
+.card {
+    perspective: 150rem;
+    position: relative;
+    height: 40rem;
+    max-width: 400px;
+    box-shadow: none;
+    background: none;
+    font-family: Rajdhani-regular;
+  }
+  
+  .card-side {
+    height: 21rem;
+    border-radius: 15px;
+    transition: all 0.8s ease;
+    backface-visibility: hidden;
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    width: 100%;
+    padding:1rem;
+    color: white;
+    border: 2px solid #555869;
+    text-align: left;
+  }
+  .card-side>div{
+      margin-top: 135px;
+  }
+  
+  .card-side.back {
+    transform: rotateY(-180deg);
+    background: transparent;
+  }
+  
+  .card-side.front {
+    background: transparent;
+  }
+  
+  .card:hover .card-side.front {
+    transform: rotateY(180deg);
+  }
+  
+  .card:hover .card-side.back {
+    transform: rotateY(0deg);
+  }
+
+  .flipcard{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      width: 70%;
+      margin: auto;
+      gap:10px
+  }
