@@ -14,8 +14,6 @@
     transition: all 0.8s ease;
     backface-visibility: hidden;
     position: absolute;
-    /* top: 0;
-    left: 0; */
     width: 100%;
     padding:1rem;
     color: white;
@@ -41,12 +39,4 @@
   
   .card:hover .card-side.back {
     transform: rotateY(0deg);
-  }
-
-  .flipcard{
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      width: 70%;
-      margin: auto;
-      gap:10px
   }

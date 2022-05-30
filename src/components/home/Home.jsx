@@ -52,17 +52,28 @@ const Home = () => {
        <p className='text-[#65ba11] underline font-bold cursor-pointer pb-8'>VIEW ALL</p>
      </div>
 
+     <div className='bg-[#171923] font-Rajdhani'>
+       <div className='w-[80%] m-auto text-left md:w-[40%]'>
+       <p className='text-white font-lighter text-3xl pt-20'>mecarreira:</p>
+       <p className='text-[#65ba11] font-lighter text-5xl md:text-7xl'>PLAYERS</p>
+       <p className='text-[#65ba11] font-lighter text-5xl md:text-7xl'>FANS</p>
+       <p className='text-[#65ba11] font-lighter text-5xl md:text-7xl'>TALENTS</p>
+       <p className='text-[#65ba11] font-lighter text-5xl md:text-7xl mb-4'>BLOCKCHAIN</p>
+       <p className='text-[white] font-thin mb-4'>Ipsum ornare porta morbi velit eu, lectus. Aliquet quam sed dictum viverra. Sit vel suscipit quam in et aliquam nibh. Orci tellus curabitur ut vel nisi scelerisque odio fames non. Sed vitae sed pretium, in tortor eu id sodales in. Tincidunt dictum convallis massa amet, fermentum at nunc.</p>
+       <p className='text-[white] font-thin pb-4'>A egestas nunc quam massa nisl ac suscipit dictum morbi. Ac volutpat, vestibulum vestibulum diam. Felis, venenatis, sed non ut morbi sed. Duis amet sollicitudin ut volutpat elementum tincidunt hac.</p>
+       </div>
+     </div>
+
   <div className='bg-[#171923]'>
      <div className='text-center text-white'>
-     <p className='text-xl pt-4'>Introducing</p>
+     <p className='text-xl pt-20'>Introducing</p>
     <p className='font-lightbold text-5xl pb-6'>Player Coins</p>
-    <p>Buy the player coin to unlock access to</p>
-    <p>exclusive content</p>
+    <p className='font-thin'>Buy the player coin to unlock access to</p>
+    <p className='font-thin'>exclusive content</p>
      </div>
-    <div className='flipcard pt-4'>
-     <FlipCard/>
-     <FlipCard/>
-     <FlipCard/>
+
+
+    <div className='md:grid md:grid-cols-3 md:gap-[10px] md:w-[70%] w-[80%] m-auto md:m-auto pt-4'>
      <FlipCard/>
      <FlipCard/>
      <FlipCard/>
